@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body { background: #ffffff; color: #1f3220; }
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-md bg-moss-700 px-5 py-3 font-semibold text-white shadow-soft transition hover:bg-moss-800 focus:outline-none focus:ring-2 focus:ring-moss-300;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-md bg-white px-5 py-3 font-semibold text-moss-800 border border-moss-200 transition hover:bg-moss-50;
+  }
+  .btn-accent {
+    @apply inline-flex items-center justify-center gap-2 rounded-md bg-sand-500 px-5 py-3 font-semibold text-moss-950 shadow-soft transition hover:bg-sand-600 hover:text-white;
+  }
+  .container-x { @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8; }
+  .h-display { @apply font-serif font-bold tracking-tight text-moss-900; }
+  .eyebrow { @apply inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-moss-700; }
+  .input { @apply w-full rounded-md border border-moss-200 bg-white px-3.5 py-2.5 text-moss-900 placeholder:text-moss-400 focus:border-moss-500 focus:outline-none focus:ring-2 focus:ring-moss-200; }
+  .label { @apply mb-1 block text-sm font-semibold text-moss-900; }
+
+  /* Prose styling for blog */
+  .prose-moss {
+    @apply text-moss-900/90 leading-relaxed;
+  }
+  .prose-moss h2 {
+    @apply font-serif text-2xl md:text-3xl font-bold text-moss-900 mt-10 mb-3;
+  }
+  .prose-moss h3 {
+    @apply font-serif text-xl md:text-2xl font-bold text-moss-900 mt-8 mb-2;
+  }
+  .prose-moss p { @apply my-4; }
+  .prose-moss ul { @apply my-4 space-y-2 list-disc pl-6; }
+  .prose-moss ol { @apply my-4 space-y-2 list-decimal pl-6; }
+  .prose-moss a { @apply text-moss-700 underline underline-offset-2 hover:text-moss-900; }
+  .prose-moss strong { @apply text-moss-900 font-semibold; }
+}
