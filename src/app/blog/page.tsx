@@ -3,6 +3,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import SectionHeader from "@/components/SectionHeader";
 import CTASection from "@/components/CTASection";
+import FAQSection from "@/components/FAQSection";
 import { posts, fmtDate } from "@/lib/blog";
 import { company } from "@/lib/media";
 
@@ -97,6 +98,8 @@ export default function BlogIndex() {
           ))}
         </div>
       </section>
+
+      <FAQSection />
 
       <CTASection title="Have a question we should write about?" subtitle="Send it our way — and grab a free estimate while you&apos;re at it." />
     </>

@@ -3,6 +3,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import SectionHeader from "@/components/SectionHeader";
 import CTASection from "@/components/CTASection";
+import FAQSection from "@/components/FAQSection";
 import { gardenCenter, company, portfolio } from "@/lib/media";
 
 export const metadata: Metadata = {
@@ -81,6 +82,8 @@ export default function GardenCenterPage() {
           </div>
         </div>
       </section>
+
+      <FAQSection />
 
       <CTASection title="Looking for a delivery or a planting plan?" subtitle="We&apos;ll bring the truck and the plan. Tell us what you&apos;ve got." />
     </>

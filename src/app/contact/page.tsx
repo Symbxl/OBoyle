@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import LeadForm from "@/components/LeadForm";
+import FAQSection from "@/components/FAQSection";
 import { company } from "@/lib/media";
 
 export const metadata: Metadata = {
@@ -88,6 +89,8 @@ export default function ContactPage() {
           <LeadForm />
         </div>
       </section>
+
+      <FAQSection />
     </>
   );
 }

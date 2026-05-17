@@ -3,6 +3,8 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import SectionHeader from "@/components/SectionHeader";
 import CTASection from "@/components/CTASection";
+import FAQSection from "@/components/FAQSection";
+import ServicesLeadForm from "@/components/ServicesLeadForm";
 import { portfolio, company } from "@/lib/media";
 
 export const metadata: Metadata = {
@@ -37,18 +39,6 @@ const groups = [
 export default function ServicesPage() {
   return (
     <>
-      <section className="relative isolate overflow-hidden bg-moss-950 text-white">
-        <Image src={portfolio[19].src} alt="" fill priority sizes="100vw" className="object-cover opacity-40" />
-        <div className="absolute inset-0 bg-gradient-to-r from-moss-950 via-moss-900/85 to-moss-900/60" />
-        <div className="container-x relative py-20 md:py-28">
-          <span className="eyebrow !text-sand-300"><span className="h-px w-6 bg-sand-300" />Services</span>
-          <h1 className="mt-4 font-serif text-4xl md:text-6xl font-bold tracking-tight">Everything we do, in one place.</h1>
-          <p className="mt-5 max-w-2xl text-lg text-moss-50/85">
-            Three core practice areas, run by the same family team that&apos;s been doing this since 1973.
-          </p>
-        </div>
-      </section>
-
       {groups.map((g, idx) => (
         <section id={g.id} key={g.id} className={`py-20 md:py-24 ${idx % 2 === 0 ? "bg-white" : "bg-moss-50/70"}`}>
           <div className="container-x grid gap-10 lg:grid-cols-2 lg:items-center">
@@ -56,7 +46,7 @@ export default function ServicesPage() {
               <Image src={g.img} alt={g.title} fill sizes="(min-width:1024px) 50vw, 100vw" className="object-cover" />
             </div>
             <div>
-              <SectionHeader eyebrow={`Practice ${String(idx + 1).padStart(2, "0")}`} title={g.title} />
+              <SectionHeader eyebrow={`Service ${String(idx + 1).padStart(2, "0")}`} title={g.title} />
               <p className="mt-5 text-moss-900/80 text-lg">{g.body}</p>
               <ul className="mt-7 grid grid-cols-2 gap-3">
                 {g.services.map((s) => (
@@ -75,6 +65,59 @@ export default function ServicesPage() {
           </div>
         </section>
       ))}
+
+      <section className="relative isolate overflow-hidden bg-gradient-to-b from-white via-moss-50/40 to-white">
+        {/* Decorative washes */}
+        <div aria-hidden className="pointer-events-none absolute -top-32 -right-32 h-[460px] w-[460px] rounded-full bg-moss-100/70 blur-3xl" />
+        <div aria-hidden className="pointer-events-none absolute -bottom-40 -left-32 h-[420px] w-[420px] rounded-full bg-sand-200/50 blur-3xl" />
+
+        <div className="container-x py-16 md:py-20 lg:py-24 grid gap-12 lg:grid-cols-[1.1fr_1fr] lg:items-center">
+          {/* Copy */}
+          <div>
+            <div className="inline-flex items-center gap-2 rounded-full bg-moss-100 px-3 py-1.5 text-xs font-bold uppercase tracking-[0.22em] text-moss-800 ring-1 ring-moss-200/80">
+              <span className="h-1.5 w-1.5 rounded-full bg-sand-500" />
+              Services
+            </div>
+            <h2 className="mt-5 font-serif text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.02] text-moss-900">
+              Everything we do,<br />
+              <span className="relative inline-block text-moss-700">
+                in one place.
+                <span aria-hidden className="absolute -bottom-1 left-0 right-0 h-2.5 -z-10 bg-sand-300/70 rounded-full" />
+              </span>
+            </h2>
+            <p className="mt-6 max-w-xl text-lg text-moss-900/75 leading-relaxed">
+              Three core service areas — landscape design, hardscape, and maintenance —
+              run by the same family team that&apos;s been doing this across {company.servingArea} since 1973.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-2">
+              <a href="#landscape" className="rounded-full bg-white px-4 py-2 text-sm font-semibold text-moss-800 ring-1 ring-moss-200 hover:bg-moss-50">Landscape Design</a>
+              <a href="#hardscape" className="rounded-full bg-white px-4 py-2 text-sm font-semibold text-moss-800 ring-1 ring-moss-200 hover:bg-moss-50">Hardscape</a>
+              <a href="#maintenance" className="rounded-full bg-white px-4 py-2 text-sm font-semibold text-moss-800 ring-1 ring-moss-200 hover:bg-moss-50">Maintenance</a>
+            </div>
+            <div className="mt-8 flex flex-wrap items-center gap-x-5 gap-y-2 text-xs font-semibold uppercase tracking-widest text-moss-700/80">
+              <span className="inline-flex items-center gap-1.5">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12l5 5 9-11"/></svg>
+                Licensed
+              </span>
+              <span className="inline-flex items-center gap-1.5">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12l5 5 9-11"/></svg>
+                Fully Insured
+              </span>
+              <span className="inline-flex items-center gap-1.5">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12l5 5 9-11"/></svg>
+                Free Estimates
+              </span>
+            </div>
+          </div>
+
+          {/* Form */}
+          <div className="lg:pl-6">
+            <ServicesLeadForm />
+          </div>
+        </div>
+      </section>
+
+      <FAQSection />
 
       <CTASection />
     </>

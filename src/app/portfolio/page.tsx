@@ -2,6 +2,7 @@ import Image from "next/image";
 import type { Metadata } from "next";
 import SectionHeader from "@/components/SectionHeader";
 import CTASection from "@/components/CTASection";
+import FAQSection from "@/components/FAQSection";
 import { portfolio, company } from "@/lib/media";
 
 export const metadata: Metadata = {
@@ -12,16 +13,6 @@ export const metadata: Metadata = {
 export default function PortfolioPage() {
   return (
     <>
-      <section className="bg-moss-950 text-white">
-        <div className="container-x py-20 md:py-24">
-          <span className="eyebrow !text-sand-300"><span className="h-px w-6 bg-sand-300" />Portfolio</span>
-          <h1 className="mt-4 font-serif text-4xl md:text-6xl font-bold tracking-tight">Properties we&apos;ve loved on.</h1>
-          <p className="mt-5 max-w-2xl text-lg text-moss-50/85">
-            A small selection of recent work — landscape design, hardscape, outdoor living, and ongoing maintenance.
-          </p>
-        </div>
-      </section>
-
       <section className="container-x py-16">
         <SectionHeader eyebrow="Gallery" title="Recent projects" />
         <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -40,6 +31,8 @@ export default function PortfolioPage() {
           ))}
         </div>
       </section>
+
+      <FAQSection />
 
       <CTASection
         title="Could your property be next?"

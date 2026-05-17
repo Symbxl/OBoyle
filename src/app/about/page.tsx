@@ -3,6 +3,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import SectionHeader from "@/components/SectionHeader";
 import CTASection from "@/components/CTASection";
+import FAQSection from "@/components/FAQSection";
 import { team, portfolio, company } from "@/lib/media";
 
 export const metadata: Metadata = {
@@ -92,6 +93,8 @@ export default function AboutPage() {
           <Link href="/contact" className="btn-secondary">Get in touch</Link>
         </div>
       </section>
+
+      <FAQSection />
 
       <CTASection />
     </>

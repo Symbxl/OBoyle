@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import CTASection from "@/components/CTASection";
+import FAQSection from "@/components/FAQSection";
 import { posts, getPost, fmtDate } from "@/lib/blog";
 import { company } from "@/lib/media";
 
@@ -124,6 +125,8 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
           </div>
         </div>
       </section>
+
+      <FAQSection />
 
       <CTASection />
     </>
