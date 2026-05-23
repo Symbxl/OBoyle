@@ -5,7 +5,7 @@ const SITE = "https://www.oboylelandscaping.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
-  const staticRoutes = ["", "/services", "/portfolio", "/garden-center", "/about", "/contact", "/blog"].map((p) => ({
+  const staticRoutes = ["", "/services", "/portfolio", "/garden-center", "/about", "/contact", "/blog", "/careers"].map((p) => ({
     url: `${SITE}${p}`,
     lastModified: now,
     changeFrequency: "monthly" as const,

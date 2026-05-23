@@ -10,7 +10,8 @@ const links = [
   { href: "/portfolio", label: "Portfolio" },
   { href: "/garden-center", label: "Garden Center" },
   { href: "/about", label: "About" },
-  { href: "/blog", label: "Blog" }
+  { href: "/blog", label: "Blog" },
+  { href: "/careers", label: "Careers" }
 ];
 
 export default function Nav() {
